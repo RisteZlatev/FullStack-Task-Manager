@@ -1,0 +1,506 @@
+body {
+    background-color: #F4F4F4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: flex;
+    gap: 60px;
+}
+.nav-bar{
+    background-color: white;
+    height: 100vh;
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+}
+.nav-bar ul{
+    padding-left: 0px;
+}
+#hand{
+    position: relative;
+    bottom: 3px;
+}
+#numberTasks{
+    background-color: #e7e7e7;
+    padding: 4px;
+    border-radius: 20px;
+
+}
+.options-img{
+    width: 10px;
+}
+.nav-bar li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.left-menu{
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    align-items: center;
+    width: fit-content;  
+}
+
+.nav-bar a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.selected{
+    background-color: #dbdbdb;
+    border-radius: 10px;
+}
+.dropdown{
+    display: inline-block;
+}
+
+.opt-btn{
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+    width: 20px;
+    padding: 3px 1px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.dropBtn{
+    display: block;
+    color: black;
+    padding: 5px 8px;
+    width: 100%;
+    border: none;
+
+}
+.dropdown .dropdown-content{
+    display: none;
+    background-color: #f7f7f7;
+    position: absolute;
+    min-width: 50px;
+    box-shadow: 2px 2px 5px hsl(0, 0%, 0%, 0.8);
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.dropdown:hover .opt-btn{
+    background-color: rgb(184, 184, 184);
+}
+.dropBtn:hover{
+    background-color: #cecece;
+    cursor: pointer;
+}
+
+.renameForm {
+    display: none;
+}
+
+
+#newListBtn{
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+    padding: 10px;
+    text-align: left;
+    transition-duration: 500;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+#newListBtn:hover{
+    cursor: pointer;
+    background-color: #dbdbdb;
+    transform: scale(1.05)
+}
+
+#newListForm{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 300px;
+}
+
+#listInput{
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: lightgray solid 1px;
+    width: 270px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 270px;
+}
+#submitListBtn, #cancelBtn{
+    border-radius: 20px;
+    padding: 8px 14px;
+    border: none;
+}
+#submitListBtn:hover{
+    cursor: pointer;
+    background-color: #dbdbdb;
+}
+#cancelBtn:hover{
+    cursor: pointer;
+    background-color: #dbdbdb;
+}
+
+.main{
+    margin-left: 20px;
+}
+.main ul{
+    padding-left: 0px;
+}
+.taskItem{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 200px;
+    background-color: white;
+    padding: 10px;
+    margin-left: 0px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+
+.left-side{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+
+
+  .checkbox-wrapper-19 {
+    box-sizing: border-box;
+    --background-color: #fff;
+    --checkbox-height: 25px;
+  }
+
+  @-moz-keyframes dothabottomcheck-19 {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: calc(var(--checkbox-height) / 2);
+    }
+  }
+
+  @-webkit-keyframes dothabottomcheck-19 {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: calc(var(--checkbox-height) / 2);
+    }
+  }
+
+  @keyframes dothabottomcheck-19 {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: calc(var(--checkbox-height) / 2);
+    }
+  }
+
+  @keyframes dothatopcheck-19 {
+    0% {
+      height: 0;
+    }
+    50% {
+      height: 0;
+    }
+    100% {
+      height: calc(var(--checkbox-height) * 1.2);
+    }
+  }
+
+  @-webkit-keyframes dothatopcheck-19 {
+    0% {
+      height: 0;
+    }
+    50% {
+      height: 0;
+    }
+    100% {
+      height: calc(var(--checkbox-height) * 1.2);
+    }
+  }
+
+  @-moz-keyframes dothatopcheck-19 {
+    0% {
+      height: 0;
+    }
+    50% {
+      height: 0;
+    }
+    100% {
+      height: calc(var(--checkbox-height) * 1.2);
+    }
+  }
+
+  .checkbox-wrapper-19 input[type=checkbox] {
+    display: none;
+  }
+
+  .checkbox-wrapper-19 .check-box {
+    height: var(--checkbox-height);
+    width: var(--checkbox-height);
+    background-color: transparent;
+    border: calc(var(--checkbox-height) * .1) solid #000;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: border-color ease 0.2s;
+    -o-transition: border-color ease 0.2s;
+    -webkit-transition: border-color ease 0.2s;
+    transition: border-color ease 0.2s;
+    cursor: pointer;
+  }
+  .checkbox-wrapper-19 .check-box::before,
+  .checkbox-wrapper-19 .check-box::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0;
+    width: calc(var(--checkbox-height) * .2);
+    background-color: #34b93d;
+    display: inline-block;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    border-radius: 5px;
+    content: " ";
+    -webkit-transition: opacity ease 0.5;
+    -moz-transition: opacity ease 0.5;
+    transition: opacity ease 0.5;
+  }
+  .checkbox-wrapper-19 .check-box::before {
+    top: calc(var(--checkbox-height) * .72);
+    left: calc(var(--checkbox-height) * .41);
+    box-shadow: 0 0 0 calc(var(--checkbox-height) * .05) var(--background-color);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  .checkbox-wrapper-19 .check-box::after {
+    top: calc(var(--checkbox-height) * .37);
+    left: calc(var(--checkbox-height) * .05);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .checkbox-wrapper-19 input[type=checkbox]:checked + .check-box,
+  .checkbox-wrapper-19 .check-box.checked {
+    border-color: #34b93d;
+  }
+  .checkbox-wrapper-19 input[type=checkbox]:checked + .check-box::after,
+  .checkbox-wrapper-19 .check-box.checked::after {
+    height: calc(var(--checkbox-height) / 2);
+    -moz-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+    -o-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+    -webkit-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+    animation: dothabottomcheck-19 0.2s ease 0s forwards;
+  }
+  .checkbox-wrapper-19 input[type=checkbox]:checked + .check-box::before,
+  .checkbox-wrapper-19 .check-box.checked::before {
+    height: calc(var(--checkbox-height) * 1.2);
+    -moz-animation: dothatopcheck-19 0.4s ease 0s forwards;
+    -o-animation: dothatopcheck-19 0.4s ease 0s forwards;
+    -webkit-animation: dothatopcheck-19 0.4s ease 0s forwards;
+    animation: dothatopcheck-19 0.4s ease 0s forwards;
+  }
+
+
+#completeCB{
+    display: inline-block;
+}
+
+
+#addTaskButton{
+    position: fixed;
+    bottom: 50px;
+    left: 43%;
+    width: 200px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 10px;
+    transition-duration: 700ms;
+}
+#addTaskButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+.task-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+#addTaskForm{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    background-color: white;
+    padding: 5px 10px;
+    margin-left: 0px;
+    align-items: center;
+    border-radius: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+
+#taskNameInput{
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: lightgray solid 1px;
+    width: 200px;
+}
+
+.left-tasks{
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.taskBtns{
+    border-radius: 20px;
+    padding: 8px 14px;
+    border: none;
+}
+
+.taskBtns:hover{
+    cursor: pointer;
+    background-color: #dbdbdb;
+}
+
+.noFind{
+    list-style-type: none;
+    font-size: larger;
+    position: absolute;
+    left: 41%;
+    top: 40%;
+
+}
+
+
+
+/* Prasanje tuka zosto ne raboti? */
+@media only screen and (max-width: 640px) {
+    .container{
+        gap: 10px;
+    }
+    .taskItem{
+        width: 100px;
+        gap: 0px;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 800px) {
+    .nav-bar{
+        width: 150px;
+    }
+    #newListBtn{
+        width: 150px;
+    }
+    #newListForm{
+        gap: 10px;
+        margin-top: 10px;
+        width: 150px;
+    }
+    #listInput{
+        border-radius: 20px;
+        padding: 5px 10px;
+        border: lightgray solid 1px;
+        width: 100px;
+    }
+    .buttons{
+        width: 150px;
+    }
+
+}
+
+@media only screen and (max-width: 950px) {
+    .task-time{
+        display: none;
+    }
+    #addTaskForm{
+        flex-direction: row;
+    }
+    .taskItem{
+        width: 344px;
+    }
+    
+    
+}
+
+@media only screen and (max-width: 1152px) {
+    .taskItem{
+        gap: 50px;
+    }
+    .noFind{
+       position: static;
+    
+    }
+    #addTaskButton{
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        width: 200px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 15px 10px;
+        transition-duration: 700ms;
+    }
+    #addTaskForm{
+        flex-direction: row;
+        height: fit-content;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+    .twoTaskBtn{
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+    }
+    .twoTaskBtn{
+        flex-direction: column;
+        gap: 5px;
+    }
+    .left-tasks{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/global.css">
+    <script src="https://kit.fontawesome.com/5da6e56126.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <h2>Task Lists</h2>
+            <ul id="lists">
+                <% taskLists.forEach(list =>{%>
+                    <li class="<%= selectedList && selectedList.id === list.id ? 'selected' : '' %>">
+                        <a href="/list/<%= list.id %>">
+                            <div class="left-menu">
+                                <span id="hand">👉</span>
+                                <span class="list-name"><%= list.name %></span>
+                                <span id="numberTasks"><%= list.tasks.length %></span>
+                            </div>
+                        </a>
+                            <div class="dropdown">
+                                <button id="opt-btn" class="opt-btn"><img class="options-img" src="/more.png" alt="options"></button>
+                                <div class="dropdown-content">
+                                    <form action="/list/delete/<%= list.id %>" method="POST">
+                                        <button class="dropBtn deleteBtn" type="submit">Delete</button>
+                                    </form>
+                                    <button class="dropBtn renameBtn">Rename</button>
+                                    <!-- <form class="renameForm" action="/list/rename/<%= list.id %>" method="POST">
+                                        <input type="text" name="newName" value="<%= list.name %>" required>
+                                        <button id="sbBtn" class="dropBtn" style="display: none;" type="submit">Submit</button>
+                                    </form> --> 
+                                    <!-- Ne znam rename kako da napravam :( -->
+                                </div>
+                            </div>
+                        </li>
+                    
+                    <%});%>
+            </ul>
+            <button id="newListBtn"><b>+</b>&nbsp; Create new list</button>
+            <form style="display: none;" id="newListForm" action="/add-list" method="POST">
+                    <input id="listInput" type="text" name="listName" placeholder="New List" required>
+                    <div class="buttons">
+                        <button id="submitListBtn" type="submit">Add list</button>
+                        <button type="reset" id="cancelBtn">Cancel</button>
+                    </div>
+                    
+            </form>
+        </div>    
+        <div class="main">
+            <div class="head">
+                <h1>Here are your tasks!</h1>
+                <p><%= today %></p>
+            </div>
+            
+            <ul class="task-list">
+                <% if(selectedList == null){ %>
+                    <li>Please select a list of tasks</li>
+                <%} else if(selectedList.tasks.length > 0){ %>
+                    <% selectedList.tasks.forEach(task => { %>
+                    <li class="taskItem">
+                        <div class="left-side">
+                            <div id="completeCB" class="checkbox-wrapper-19 checkbox-task">
+                                <input type="checkbox" id="cbtest-<%= task.id %>" />
+                                <label for="cbtest-<%= task.id %>" class="check-box"></label>
+                              </div>
+                            <span class="task-name"><%= task.name %><i class="fa-solid fa-arrow-down" id="arrow" style="margin-left: 5px; font-size: 14px; color: gray; display: none;"></i></span>
+                        </div>
+                        <span class="task-time"><%= task.time %></span>
+                    </li>
+                    <%}) %>
+                <% } else{ %>
+                    <li id="notFound" class="noFind">No tasks available for this list<i class="fa-solid fa-magnifying-glass" style="margin-left: 10px;"></i></li>
+                <% } %>
+            </ul>
+            <% if (selectedList) { %>
+                <button id="addTaskButton"><b>+</b>&nbsp; Add Task</button>
+                <form id="addTaskForm" action="/add-task/<%= selectedList.id %>" method="POST" style="display: none;">
+                    <div class="left-tasks">
+                        <input id="taskNameInput" type="text" name="taskName" placeholder="Task Name" required>
+                        <input id="datetimeInput" type="datetime-local" name="taskTime">
+                    </div>
+                    <div class="twoTaskBtn">
+                        <button class="taskBtns" type="submit">Add Task</button>
+                        <button class="taskBtns" type="reset" id="cancelTaskBtn">Cancel</button>
+                    </div>
+                </form>
+            <% }  %>
+
+        </div>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>
